@@ -12,7 +12,7 @@ EPOCHS = 500
 LEARNING_RATE = 1e-3
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print(f"Using device: {device} 🚀")
+print(f"Using device: {device} ")
 
 class RefineNetBlock(nn.Module):
     def __init__(self):
@@ -109,7 +109,7 @@ for cr in ratios_to_run:
     final_nmse_db = 10 * np.log10(final_nmse_linear)
     
     final_results[cr] = final_nmse_db
-    print(f"\n✅ COMPLETED CR = {cr:.5f} | Final NMSE: {final_nmse_db:.2f} dB")
+    print(f"\n COMPLETED CR = {cr:.5f} | Final NMSE: {final_nmse_db:.2f} dB")
 
 print("\n" + "="*50)
 print(" MASTER SUMMARY: CSINET RESULTS")
